@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder;
 
 import com.yammer.dropwizard.util.Duration;
 
-public class Route extends RouteBuilder{
+public class DelayRoute extends RouteBuilder{
 
 	@Override
 	public void configure() throws Exception {

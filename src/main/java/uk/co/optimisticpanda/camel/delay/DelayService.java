@@ -18,7 +18,7 @@ public class DelayService extends Service<Configuration> {
 	@Override
 	public void run(Configuration config, Environment env) throws Exception {
 
-		ManagedCamel camel = new ManagedCamel(new Route());
+		ManagedCamel camel = new ManagedCamel(new DelayRoute());
 		env.manage(camel);
 		env.addResource(new SampleResource(camel.createProducer()));
 
