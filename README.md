@@ -11,7 +11,7 @@ This is then added to the environment:
 	@Override
 	public void run(Configuration config, Environment env) throws Exception {
 
-    		ManagedCamel camel = new ManagedCamel(new DelayRoute());
+		ManagedCamel camel = new ManagedCamel(new DelayRoute());
 		env.manage(camel);
 		env.addResource(new SampleResource(camel.createProducer()));
 	
@@ -45,6 +45,6 @@ public class SampleResource {
 Our DelayRoute RouteBuilder contains the following simple route:
 
 ```java	
-		from("direct:start").delay(Duration.seconds(5).toMilliseconds()).asyncDelayed().to("log:hello");
+	from("direct:start").delay(Duration.seconds(5).toMilliseconds()).asyncDelayed().to("log:hello");
 ```	
 
